@@ -29,3 +29,7 @@ Para iniciar la aplicación, sigue estos pasos desde una terminal **bash**:
    http://localhost:8000
 
 Allí se servirá la interfaz web del temporizador Pomodoro.
+
+## 🖼️ Vista previa de la aplicación
+
+![Pomodoro Timer](assets/pomodoro.png)
