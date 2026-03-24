@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.5s ease;
+            color: white;
+        }
+        #mode {
+            font-size: 2em;
+            margin: 20px;
+        }
+        .circle {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+        }
+       .circle svg {
+            transform: rotate(-90deg); /* arranca desde arriba, como las 12 */
+        }
+        .circle circle {
+            fill: none;
+            stroke-width: 15;
+            stroke-linecap: butt; /* aquí está el cambio clave */
+        }
+        .circle .bg {
+            stroke: rgba(255,255,255,0.2);
+        }
+        .circle .progress {
+            stroke: white;
+            transition: stroke-dashoffset 1s linear;
+        }
+        .circle .time {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+        }
+        button {
+            font-size: 1.2em;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            min-width: 120px; /* ancho mínimo uniforme */
+            color: white;
+        }
+
+        /* Colores neutros y contrastantes */
+        .start {
+            background: #2e7d32; /* verde oscuro */
+        }
+        .pause {
+            background: #616161; /* gris oscuro */
+        }
+        .reset {
+            background: #1565c0; /* azul intenso */
+        }
+
+        /* Efecto hover para mejor interacción */
+        button:hover {
+            opacity: 0.85;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div id="mode">Trabajo</div>
+    <div class="circle">
+        <svg width="250" height="250">
+            <circle class="bg" cx="125" cy="125" r="110"></circle>
+            <circle class="progress" cx="125" cy="125" r="110"></circle>
+        </svg>
+        <div class="time" id="timer">25:00</div>
+    </div>
+    <button class="start" onclick="startTimer()">Iniciar</button>
+    <button class="pause" onclick="pauseTimer()">Pausar</button>
+    <button class="reset" onclick="resetTimer()">Reiniciar</button>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
